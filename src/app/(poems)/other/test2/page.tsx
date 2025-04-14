@@ -3,9 +3,9 @@ import FunctionCall from "@/components/Functions/FunctionCall"
 import Define from "@/components/Define"
 import Variable from "@/components/Variable"
 
-export default function Main(){
+export default function Test2(){
     return(
-        <FunctionDefinition title="main">
+        <FunctionDefinition title="test2">
             <Define/> <Variable>result</Variable> = <FunctionCall title="live a life" link="/live-a-life" />;
         </FunctionDefinition>
     )

@@ -17,3 +17,6 @@
 
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
 
+[is-~="badge"]:before, [is-~="badge"]:after{
+    width: 1.05ch;
+}
