@@ -1,7 +1,8 @@
 {
-  "name": "main",
+  "name": "src-poems",
   "version": "0.1.0",
   "private": true,
+  "author": "Cameron Decker",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -9,14 +10,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@webtui/css": "^0.0.2",
+    "@webtui/theme-nord": "^0.0.2",
+    "next": "15.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
-    "@types/react-dom": "^19"
+    "@types/react-dom": "^19",
+    "typescript": "^5"
   }
 }
