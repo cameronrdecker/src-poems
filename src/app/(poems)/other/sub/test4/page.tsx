@@ -1,6 +1,6 @@
 import FunctionDefinition from "@/components/Functions/FunctionDefinition"
 import FunctionCall from "@/components/Functions/FunctionCall"
-import Define from "@/components/Define"
+import { Define } from "@/components/System"
 import Variable from "@/components/Variable"
 
 export default function Test4(){

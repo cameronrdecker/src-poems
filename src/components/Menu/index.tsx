@@ -103,6 +103,10 @@ const MENU_ITEMS: DirectoryItem[] = [
     path: '/main'
   },
   {
+    label: 'organize',
+    path: '/organize'
+  },
+  {
     label: 'other',
     items: [
       {

@@ -3,10 +3,10 @@ import FunctionCall from "@/components/Functions/FunctionCall"
 import { Define } from "@/components/System"
 import Variable from "@/components/Variable"
 
-export default function Test1(){
+export default function Organize(){
     return(
-        <FunctionDefinition title="test1">
-            <Define/> <Variable>result</Variable> = <FunctionCall title="test4" link="/other/sub/test4" />;
+        <FunctionDefinition title="organize">
+            <Define/> <Variable>result</Variable> = <FunctionCall title="test1" link="/other/test1" />;
         </FunctionDefinition>
     )
 }
