@@ -3,6 +3,7 @@ import styles from "./Menu.module.css";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import MENU_ITEMS from "@/app/menuItems";
 
 type DirectoryItem = {
   label: string
@@ -10,19 +11,14 @@ type DirectoryItem = {
   items?: DirectoryItem[]
 }
 
-type Directory = {
-  label: string
-  items: (File | Directory)[]
-}
-
 export default function Menu({}) {
   const pathName = usePathname();
-
+  const items:DirectoryItem[] = MENU_ITEMS
   return (
     <nav className={styles.menu} box-="square contain:!top" >
       <strong is-="badge" style={{marginBottom: '1vh'}}>/src</strong>
       <ul marker-="open tree" >
-        {MENU_ITEMS.map((item)=>{
+        {items.map((item)=>{
           if(item.path){
             return <File key={item.label} file={item} pathName={pathName}/>
           }
@@ -95,50 +91,3 @@ const Directory = ({directory, pathName}: { directory: DirectoryItem, pathName: 
       </li>
   )
 }
-
-
-const MENU_ITEMS: DirectoryItem[] = [
-  {
-    label: 'main',
-    path: '/main'
-  },
-  {
-    label: 'organize',
-    path: '/organize'
-  },
-  {
-    label: 'other',
-    items: [
-      {
-        label: 'test1',
-        path: '/other/test1'
-      },
-      {
-        label: 'test2',
-        path: '/other/test2'
-      },
-      {
-        label: 'test3',
-        path: '/other/test3'
-      },
-      {
-        label: 'sub',
-        items: [
-          {
-            label: 'test4',
-            path: '/other/sub/test4'
-          },
-          {
-            label: 'test5',
-            path: '/other/sub/test5'
-          },
-          {
-            label: 'test6',
-            path: '/other/sub/test6'
-          },
-          
-        ]
-      }
-    ]
-  }
-]
