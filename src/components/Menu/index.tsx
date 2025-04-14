@@ -53,8 +53,24 @@ const File = ({file, pathName}: {file: DirectoryItem, pathName: string}) => {
   )
 }
 
+const getPaths:(items:DirectoryItem[]) => any = (items) =>{
+  return items?.map((item)=>{
+    if(item.path){
+      return item.path
+    }
+
+    else if(item.items){
+      return getPaths(item.items)
+    }
+
+  })
+}
+
 const Directory = ({directory, pathName}: { directory: DirectoryItem, pathName: string}) => {
-  const [isOpen, toggleOpen ] = useState(true);
+  const paths = directory.items && getPaths(directory.items).flat()
+
+  console.log(paths)
+  const [isOpen, toggleOpen ] = useState(paths?.includes(pathName));
 
   return(
       <li className={styles.li}> 
@@ -99,19 +115,19 @@ const MENU_ITEMS: DirectoryItem[] = [
         path: '/other/test3'
       },
       {
-        label: 'other',
+        label: 'sub',
         items: [
           {
-            label: 'test1',
-            path: '/other/test1'
+            label: 'test4',
+            path: '/other/sub/test4'
           },
           {
-            label: 'test2',
-            path: '/other/test2'
+            label: 'test5',
+            path: '/other/sub/test5'
           },
           {
-            label: 'test3',
-            path: '/other/test3'
+            label: 'test6',
+            path: '/other/sub/test6'
           },
           
         ]
