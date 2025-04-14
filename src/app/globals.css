@@ -12,3 +12,7 @@
 @import "@webtui/css/components/badge.css";
 
 @import '@webtui/theme-nord';
+
+@import "@webtui/plugin-nf";
+
+@import "https://www.nerdfonts.com/assets/css/webfont.css"

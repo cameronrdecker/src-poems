@@ -8,16 +8,17 @@ export type Poem = {
     content: string;
 };
 
-export type Slug = string | 
-{
+export type Directory = {
     directory: string
-    files: [string | Slug]
+    files: [string | Directory]
 }
+
+export type Slug = string | Directory
 
 export const poemsDirectory = join(process.cwd(), "/src/poems");
   
-export function getPoemSlugs(directory = poemsDirectory) {
-    console.log('DIRECTORY: ', directory)
+export function getPoemSlugs(directory:string = poemsDirectory) {
+
   return fs.readdirSync(directory).map((file:string)=>{
 
     if(file.includes('.md')){

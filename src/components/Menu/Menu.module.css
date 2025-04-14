@@ -1,6 +1,17 @@
+
 .menu{
     max-width: 32ch;
     width: 100%;
     height: 96vh;
     margin: 2ch;
+}
+
+.li{
+    line-height: 1.1;
+}
+
+.directory{
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--nord7);
 }
