@@ -2,7 +2,7 @@
 import styles from "./Menu.module.css";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type DirectoryItem = {
   label: string
@@ -69,8 +69,11 @@ const getPaths:(items:DirectoryItem[]) => any = (items) =>{
 const Directory = ({directory, pathName}: { directory: DirectoryItem, pathName: string}) => {
   const paths = directory.items && getPaths(directory.items).flat()
 
-  console.log(paths)
   const [isOpen, toggleOpen ] = useState(paths?.includes(pathName));
+
+  useEffect(()=>{
+    if(paths?.includes(pathName)){ toggleOpen(true)}
+  },[pathName])
 
   return(
       <li className={styles.li}> 

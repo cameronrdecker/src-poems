@@ -6,7 +6,7 @@ import Variable from "@/components/Variable"
 export default function Main(){
     return(
         <FunctionDefinition title="main">
-            <Define/> <Variable>result</Variable> = <FunctionCall title="live a life" link="/live-a-life" />;
+            <Define/> <Variable>result</Variable> = <FunctionCall title="test1" link="/other/test1" />;
         </FunctionDefinition>
     )
 }
