@@ -17,7 +17,7 @@ export default function RootLayout({
       <body>
         <div style={{display:"grid", gridTemplateColumns: '32ch auto', gap: '2ch'}}>
           <Menu/>
-          <div box-="square" style={{margin: '2ch'}} >
+          <div box-="square" style={{margin: '2ch', padding: '4ch'}} >
             {children}
           </div>
         </div>

@@ -13,8 +13,7 @@ export default function DirectoryItems({slugs}:{slugs: Slug[]}){
     return (
       <ul marker-="open tree" >
         {slugs.map((slug: string | Directory)=>{
-          let label;
-  
+
           if(typeof slug == 'string'){
             return <File key={slug} file={slug} selectedSlug={selectedSlug}/>
           }

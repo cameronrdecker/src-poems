@@ -1,0 +1,11 @@
+.functionTitle{
+    color: var(--nord8);
+}
+
+.variable{
+    color: var(--nord14);
+}
+
+.indent{
+    margin-left: 2ch;
+}
